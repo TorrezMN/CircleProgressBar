@@ -1,0 +1,29 @@
+{
+  "name": "circle_progress_bar",
+  "version": "1.0.0",
+  "description": "Small component to display circle progress bar's.",
+  "main": "src/component.js",
+  "bin": "src/component.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TorrezMN/CircleProgressBar.git"
+  },
+  "keywords": [
+    "circle",
+    "bars",
+    "progress",
+    "bar"
+  ],
+  "author": "TM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TorrezMN/CircleProgressBar/issues"
+  },
+  "homepage": "https://github.com/TorrezMN/CircleProgressBar#readme"
+}
