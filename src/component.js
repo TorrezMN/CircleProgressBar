@@ -2,7 +2,27 @@
 
 
 
-function create_template(_col, _perc, _cp){
+
+function getRandomColor() {
+  // Creates a random hex color.
+  let letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return (color);
+}
+
+
+
+
+
+function create_template(
+  _progress_color,
+  _text_color, 
+  _porcentaje,
+  _text,
+  _background){
   // Crea el template para la tarjeta.
   let progress_style = `
 *{
@@ -30,6 +50,7 @@ body{
   flex-direction:column;
   background:#fff;
   box-shadow: 0 30px 30px rgba(30,20,50, .2);
+  background-color:${_background};
 }
 
 .box .percent{
@@ -66,7 +87,7 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  color:#111;
+  color:${_text_color};
 }
 .box .percent .number h2{
   font-size:48px;
@@ -76,9 +97,9 @@ body{
 }
 .box .text{
   padding:10px 0 0;
-  color:#999;
   font-weight:700;
   letter-spacing:1px;
+  color:${_text_color};
 } 
 
 .box .percent svg circle:nth-child(1){
@@ -86,10 +107,10 @@ body{
   stroke:#f3f3f3;
 }
 .box .percent svg circle:nth-child(2){
-  stroke-dashoffset:calc(440 - (440 * ${_perc}) / 100);
+  stroke-dashoffset:calc(440 - (440 * ${_porcentaje}) / 100);
   /* El porcentaje va aca: */
   /* stroke-dashoffset:calc(440 - (440 * <porcentaje>) / 100); */
-  stroke:${_col};
+  stroke:${_progress_color};
 }
 
 
@@ -123,10 +144,10 @@ body{
           <circle cx="70" cy="70" r="70"></circle>
         </svg>
         <div class="number">
-          <h2>${_perc} <span>%</span></h2>
+          <h2>${_porcentaje} <span>%</span></h2>
         </div>
       </div>
-      <h2 class="text">${_cp}</h2>
+      <h2 class="text"> ${_text}</h2>
     </div><!-- ENDS box -->
 
 
@@ -153,12 +174,21 @@ class CircleProgress extends HTMLElement {
   }
 
   set_template() {
-    this.template.innerHTML = create_template(
-      this.getAttribute('cp-color'),
-      this.getAttribute('cp-percentaje'),
-      this.getAttribute('cp-skill'),
+      let prograss_color = this.getAttribute('cp-color');
+      let progress_percentage = this.getAttribute('cp-percentaje');
+      let progress_skill = this.getAttribute('cp-skill');
+      let progress_text_color = this.getAttribute('cp-text-color');
+      let progress_background = this.getAttribute('cp-background');
 
+    this.template.innerHTML = create_template(
+      prograss_color? prograss_color:getRandomColor(),
+      progress_text_color? progress_text_color:getRandomColor(),
+      progress_percentage,
+      progress_skill,
+      progress_background? progress_background:getRandomColor()
     );
+
+
     this._root.appendChild(this.template.content.cloneNode(true));
   }
 
@@ -167,8 +197,6 @@ class CircleProgress extends HTMLElement {
   }
 
   connectedCallback() {
-    console.log('ATRIBUTO 1 ', this.getAttribute('cp-color'));
-
 
     this.set_template();
 
