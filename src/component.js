@@ -1,28 +1,22 @@
 // IMPORT TEMPLATES
 
-
-
-
 function getRandomColor() {
   // Creates a random hex color.
-  let letters = '0123456789ABCDEF';
-  let color = '#';
+  let letters = "0123456789ABCDEF";
+  let color = "#";
   for (let i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
-  return (color);
+  return color;
 }
-
-
-
-
 
 function create_template(
   _progress_color,
-  _text_color, 
+  _text_color,
   _porcentaje,
   _text,
-  _background){
+  _background
+) {
   // Crea el template para la tarjeta.
   let progress_style = `
 *{
@@ -115,7 +109,7 @@ body{
 
 
 
-  `
+  `;
 
   let template_text = `
     <html lang="en">
@@ -157,12 +151,9 @@ body{
 				  </body>
 				</html>
 
-  ` 
-  return(template_text);
-};
-
-
-
+  `;
+  return template_text;
+}
 
 class CircleProgress extends HTMLElement {
   constructor(props) {
@@ -170,24 +161,22 @@ class CircleProgress extends HTMLElement {
     this._root = this.attachShadow({ mode: "closed" });
     this.template = document.createElement("template");
     this.extras = props;
-
   }
 
   set_template() {
-      let prograss_color = this.getAttribute('cp-color');
-      let progress_percentage = this.getAttribute('cp-percentaje');
-      let progress_skill = this.getAttribute('cp-skill');
-      let progress_text_color = this.getAttribute('cp-text-color');
-      let progress_background = this.getAttribute('cp-background');
+    let prograss_color = this.getAttribute("cp-color");
+    let progress_percentage = this.getAttribute("cp-percentaje");
+    let progress_skill = this.getAttribute("cp-skill");
+    let progress_text_color = this.getAttribute("cp-text-color");
+    let progress_background = this.getAttribute("cp-background");
 
     this.template.innerHTML = create_template(
-      prograss_color? prograss_color:getRandomColor(),
-      progress_text_color? progress_text_color:getRandomColor(),
+      prograss_color ? prograss_color : getRandomColor(),
+      progress_text_color ? progress_text_color : getRandomColor(),
       progress_percentage,
       progress_skill,
-      progress_background? progress_background:getRandomColor()
+      progress_background ? progress_background : getRandomColor()
     );
-
 
     this._root.appendChild(this.template.content.cloneNode(true));
   }
@@ -197,11 +186,9 @@ class CircleProgress extends HTMLElement {
   }
 
   connectedCallback() {
-
     this.set_template();
-
   }
 }
 
 // COMPONENTS
-customElements.define('cp-card', CircleProgress);
+customElements.define("cp-card", CircleProgress);
