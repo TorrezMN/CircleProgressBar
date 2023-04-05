@@ -1,5 +1,5 @@
 {
-  "name": "circle_progress_bar",
+  "name": "circle_progress",
   "version": "1.0.0",
   "description": "Small component to display circle progress bar's.",
   "main": "src/component.js",
