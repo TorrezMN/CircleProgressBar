@@ -1,6 +1,6 @@
 # CircleProgressBar
 
-Small component to display GitHub profiles in various ways. Completely responsive.
+Small component to display **circle progress bars**, completely responsive.
 
 ## Installation
 
