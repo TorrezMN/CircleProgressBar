@@ -6,13 +6,13 @@ Small component to display **circle progress bars**, completely responsive.
 
 You can install this component in your project with the fallowing command:
 
-```
+```console
 npm i @torrez_mn/gh-card
 ```
 
 or by:
 
-```
+```console
 npm install @torrez_mn/gh-card
 ```
 
@@ -21,7 +21,7 @@ npm install @torrez_mn/gh-card
 In your component import the component as fallows:
 
 
-```
+```JavaScript
 import '@torrez_mn/gh-card';
 
 ```
