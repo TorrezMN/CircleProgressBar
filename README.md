@@ -18,7 +18,7 @@ npm install @torrez_mn/gh-card
 
 ## Usage
 
-In your component import the component as fallows:
+In your component, import the component as fallows:
 
 
 ```JavaScript
@@ -26,6 +26,33 @@ import '@torrez_mn/gh-card';
 
 ```
 
+then you cand work with the tomponent.
+
+### With required props.
+- Required props to work. 
+
+```JavaScript
+{/*With required props.*/}
+<cp-card cp-percentaje="30" cp-skill="html" />
+```
+
+### With optional props.
+- Optional props to work. 
+
+```JavaScript
+{/*With optional props.*/}
+
+  <cp-card
+    cp-percentaje="20"
+    cp-skill="html5"
+    cp-text-color="orange"
+    cp-background="rgba(0,0,0,.3)"
+  />
+```
+
+
+## DEMO
+***See a *Code Sandbox* React demo [here.](https://wg5103.csb.app/)***
 
 ## Docs
 
@@ -34,7 +61,7 @@ Brief description of the component's props.
 
 | prop | description | required |
 |------|-------------|----------|
-| gh-user | Corresponds to the username to display. It must match the GitHub user. | Required |
-| gh-mode | Mode in which the component will be displayed: "normal", "horizontal", "horizontal-projects".| Required    |
-| gh-primary-color | A primary color to use for the component.| Only for "normal" and "horizontal"  mode.|
-| gh-secondary-color | A secondary color to use for the component.| Only for "normal" and "horizontal" mode.|
+|cp-percentaje|The percentaje value to be drawn by the progress bar.| REQUIRED|
+|cp-skill|Percentaje description to show behind value.|REQUIRED|
+|cp-text-color|Color of text, value and bar color in the component.|OPTIONAL|
+|cp-background|Color of the card background.|OPTIONAL|
