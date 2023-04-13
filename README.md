@@ -7,21 +7,25 @@ Small component to display **circle progress bars**, completely responsive.
 You can install this component in your project with the fallowing command:
 
 ```console
+
 npm i @torrez_mn/circle_progress_bar
+
 ```
 
 or by:
 
 ```console
+
 npm install @torrez_mn/circle_progress_bar
+
 ```
 
 ## Usage
 
-In your component, import the component as fallows:
-
+In your component, you can import the component as fallows:
 
 ```JavaScript
+
 import "@torrez_mn/circle_progress_bar";
 
 ```
@@ -32,14 +36,17 @@ then you cand work with the tomponent.
 - Required props to work. 
 
 ```JavaScript
+
 {/*With required props.*/}
 <cp-card cp-percentaje="30" cp-skill="html" />
+
 ```
 
 ### With optional props.
 - Optional props to work. 
 
 ```JavaScript
+
 {/*With optional props.*/}
 
   <cp-card
@@ -48,6 +55,7 @@ then you cand work with the tomponent.
     cp-text-color="orange"
     cp-background="rgba(0,0,0,.3)"
   />
+
 ```
 
 
