@@ -2,12 +2,11 @@
 
 Small component to display **circle progress bars**, completely responsive.
 
-
-<center>
-<img width:'30' src='./docs/chart1.png'>
-<img width:'30' src='./docs/chart2.png'>
-<img width:'30' src='./docs/chart3.png'>
-</center>
+<div style="display:flex;flex-direction:row;justify-content:center;align-items:center;">
+<img src="docs/chart1.png"  width="30%" height="100%">
+<img src="docs/chart2.png"  width="30%" height="100%">
+<img src="docs/chart3.png"  width="30%" height="100%">
+</div >
 
 
 ## Installation
