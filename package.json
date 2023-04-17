@@ -18,10 +18,13 @@
     "circle",
     "bars",
     "progress",
+    "circle progress",
+    "circle progress bars",
+    "circle bars",
     "bar"
   ],
   "author": "TM",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/TorrezMN/CircleProgressBar/issues"
   },
