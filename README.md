@@ -2,6 +2,14 @@
 
 Small component to display **circle progress bars**, completely responsive.
 
+
+<center>
+<img width:'30' src='./docs/chart1.png'>
+<img width:'30' src='./docs/chart2.png'>
+<img width:'30' src='./docs/chart3.png'>
+</center>
+
+
 ## Installation
 
 You can install this component in your project with the fallowing command:
